@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Theme Made By www.w3schools.com - No Copyright -->
+    <title>NUS Climbing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font-family: 'Work Sans', sans-serif;
+            color: #777;
+        }
+    
+        h3,
+        h4 {
+            margin: 10px 0 30px 0;
+            letter-spacing: 8px;
+            font-size: 20px;
+            color: #111;
+        }
+        
+        h5, .h5 {
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+}
+    
+        h2 {
+            margin: 10px 0 30px 0;
+            letter-spacing: 6px;
+            font-size: 16px;
+            color: #111;
+        }
+    
+        .container {
+            padding: 80px 120px;
+        }
+    
+        .person {
+            border: 10px solid transparent;
+            margin-bottom: 25px;
+            width: 80%;
+            height: 80%;
+            opacity: 0.7;
+        }
+    
+        .person:hover {
+            border-color: #f1f1f1;
+        }
+    
+        .carousel-inner img {
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+            /* make all photos black and white */
+            width: 100%;
+            /* Set width to 100% */
+            margin: auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    
+        .carousel-caption h3 {
+            color: #fff !important;
+        }
+    
+        @media (max-width: 600px) {
+            .carousel-caption {
+                display: none;
+                /* Hide the carousel text when the screen is less than 600 pixels wide */
+            }
+            .container {
+                padding: 80px 10px;
+            }
+        }
+    
+        .bg-1 {
+            background: #2d2d30;
+            color: #bdbdbd;
+        }
+    
+        .bg-1 h3 {
+            color: #fff;
+        }
+    
+        .bg-1 p {
+            font-style: italic;
+        }
+    
+        .list-group-item:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+        }
+    
+        .list-group-item:last-child {
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+    
+        .thumbnail p {
+            margin-top: 15px;
+            color: #555;
+        }
+    
+        .btn {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #f1f1f1;
+            border-radius: 0;
+            transition: .2s;
+        }
+    
+        .btn:hover,
+        .btn:focus {
+            border: 1px solid #333;
+            background-color: #fff;
+            color: #000;
+        }
+    
+        .modal-header,
+        h4,
+        .close {
+            background-color: #333;
+            color: #fff !important;
+            text-align: center;
+            font-size: 30px;
+        }
+    
+        .modal-header,
+        .modal-body {
+            padding: 40px 50px;
+        }
+    
+        .nav-tabs li a {
+            color: #777;
+        }
+    
+        .column {
+            float: left;
+            width: 33.33%;
+            padding: 10px;
+            text-align: center;
+        }
+    
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    
+        #googleMap {
+            width: 100%;
+            height: 400px;
+            -webkit-filter: grayscale(0%);
+            filter: grayscale(0%);
+        }
+    
+        .navbar {
+            font-family: Montserrat, sans-serif;
+            margin-bottom: 0;
+            background-color: #2d2d30;
+            border: 0;
+            font-size: 11px !important;
+            letter-spacing: 4px;
+            opacity: 0.9;
+        }
+    
+        .navbar li a,
+        .navbar .navbar-brand {
+            color: #d5d5d5 !important;
+        }
+    
+        .navbar-nav li a:hover {
+            color: #fff !important;
+        }
+    
+        .navbar-nav li.active a {
+            color: #fff !important;
+            background-color: #29292c !important;
+        }
+    
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+        }
+    
+        .open .dropdown-toggle {
+            color: #fff;
+            background-color: #555 !important;
+        }
+    
+        .dropdown-menu li a {
+            color: #000 !important;
+        }
+    
+        .dropdown-menu li a:hover {
+            background-color: lightgrey !important;
+        }
+        
+        .accordion {
+            background-color: #eee;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+    
+        .active,
+        .accordion:hover {
+            background-color: #ccc;
+        }
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+    
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }
+        .testimonial-quote {
+            font-size: 14px;
+        }
+
+        .testimonial-quote blockquote {
+        /* Negate theme styles */
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+            background: none;
+            color: gray;
+            font-family: Georgia, serif;
+            font-size: 1.5em;
+            font-style: italic;
+            line-height: 1.4 !important;
+            margin: 0;
+            position: relative;
+            text-shadow: 0 1px white;
+            z-index: 600;
+        }
+
+        .testimonial-quote blockquote * {
+            box-sizing: border-box; 
+        }
+
+        .testimonial-quote blockquote p {
+            color: #75808a; 
+            line-height: 1.4 !important;
+        }
+
+        .testimonial-quote blockquote p:first-child:before {
+            content: '\201C';
+            color: #81bedb;
+            font-size: 7.5em;
+            font-weight: 700;
+            opacity: .3;
+            position: absolute;
+            top: -.4em;
+            left: -.2em;    
+            text-shadow: none;
+            z-index: -300;
+        }
+
+        .testimonial-quote {
+            position: relative; 
+        }
+
+        .testimonial-quote .quote-container {
+            padding-left: 80px; 
+            padding-right: 80px; 
+        }
+ 
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .timeline {
+            position: relative;
+            padding: 0;
+            list-style: none;
+        }
+        .timeline:before {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 40px;
+            width: 2px;
+            margin-left: -1.5px;
+            content: "";
+            background-color: #e9ecef;
+        }
+        .timeline > li {
+            position: relative;
+            min-height: 50px;
+            margin-bottom: 50px;
+        }
+        .timeline > li:after, .timeline > li:before {
+            display: table;
+            content: " ";
+        }
+        .timeline > li:after {
+            clear: both;
+        }
+        .timeline > li .timeline-panel {
+            position: relative;
+            float: right;
+            width: 100%;
+            padding: 0 20px 0 100px;
+            text-align: left;
+        }
+        .timeline > li .timeline-panel:before {
+            right: auto;
+            left: -15px;
+            border-right-width: 15px;
+            border-left-width: 0;
+        }
+        .timeline > li .timeline-panel:after {
+            right: auto;
+            left: -14px;
+            border-right-width: 14px;
+            border-left-width: 0;
+        }
+        .timeline > li .timeline-image {
+            position: absolute;
+            z-index: 100;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            margin-left: 0;
+            text-align: center;
+            color: white;
+            border: 7px solid #e9ecef;
+            border-radius: 100%;
+            background-color: lightblue;
+        }
+        .timeline > li .timeline-image h4 {
+            font-size: 10px;
+            line-height: 14px;
+            margin-top: 12px;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel {
+            float: right;
+            padding: 0 20px 0 100px;
+            text-align: left;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel:before {
+            right: auto;
+            left: -15px;
+            border-right-width: 15px;
+            border-left-width: 0;
+        }
+        .timeline > li.timeline-inverted > .timeline-panel:after {
+            right: auto;
+            left: -14px;
+            border-right-width: 14px;
+            border-left-width: 0;
+        }
+        .timeline > li:last-child {
+            margin-bottom: 0;
+        }
+        .timeline .timeline-heading h4 {
+            margin-top: 0;
+            color: inherit;
+        }
+        .timeline .timeline-heading h4.subheading {
+            text-transform: none;
+        }
+        .timeline .timeline-body > ul,
+        .timeline .timeline-body > p {
+            margin-bottom: 0;
+        }
+
+        @media (min-width: 768px) {
+            .timeline:before {
+                left: 50%;
+            }
+            .timeline > li {
+                min-height: 100px;
+                margin-bottom: 100px;
+            }
+            .timeline > li .timeline-panel {
+                float: left;
+                width: 41%;
+                padding: 0 20px 20px 30px;
+                text-align: right;
+            }
+            .timeline > li .timeline-image {
+                left: 50%;
+                width: 100px;
+                height: 100px;
+                margin-left: -50px;
+            }
+            .timeline > li .timeline-image h5 {
+                font-size: 13px;
+                line-height: 18px;
+                margin-top: 16px;
+            }
+            .timeline > li.timeline-inverted > .timeline-panel {
+                float: right;
+                padding: 0 30px 20px 20px;
+                text-align: left;
+            }
+        }
+        @media (min-width: 992px) {
+            .timeline > li {
+                min-height: 150px;
+            }
+            .timeline > li .timeline-panel {
+                padding: 0 20px 20px;
+            }
+            .timeline > li .timeline-image {
+                width: 150px;
+                height: 150px;
+                margin-left: -75px;
+            }
+            .timeline > li .timeline-image h5 {
+                font-size: 18px;
+                line-height: 26px;
+                margin-top: 30px;
+            }
+            .timeline > li.timeline-inverted > .timeline-panel {
+                padding: 0 20px 20px;
+            }
+        }
+        @media (min-width: 1200px) {
+            .timeline > li {
+                min-height: 170px;
+            }
+            .timeline > li .timeline-panel {
+                padding: 0 20px 20px 100px;
+            }
+            .timeline > li .timeline-image {
+                width: 170px;
+                height: 170px;
+                margin-left: -85px;
+            }
+            .timeline > li .timeline-image h5 {
+                margin-top: 40px;
+            }
+            .timeline > li.timeline-inverted > .timeline-panel {
+                padding: 0 100px 20px 20px;
+            }
+        }
+        
+        .glyphicon.glyphicon-heart, .glyphicon.glyphicon-plane, .glyphicon.glyphicon-fire {
+            font-size: 30px;
+        }
+        .event_item{
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+
+            &:hover{
+                background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
+                box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+                .ei_Dot{
+                    background-color: #fff;
+                }
+                .ei_Copy,.ei_Title{
+                    color:#fff;
+                }
+            }
+        }
+
+        .ei_Dot,.ei_Title{
+            display:inline-block;
+        }
+
+        .ei_Dot{
+            border-radius:50%;
+            width:10px;
+            height: 10px;
+            background-color: $light_grey;
+            box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+        }
+        .dot_active{
+            background-color: lightblue;
+        }
+
+        .ei_Title{
+            margin-left:10px;
+            color:#363b41;
+        }
+
+        .ei_Copy{
+            margin-left:27px;
+        }
+
+
+        footer {
+            background-color: #2d2d30;
+            color: #f5f5f5;
+            padding: 32px;
+        }
+    
+        footer a {
+            color: #f5f5f5;
+        }
+    
+        footer a:hover {
+            color: #777;
+            text-decoration: none;
+        }
+    
+        .form-control {
+            border-radius: 0;
+        }
+    
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#myPage">NUS CLIMBING</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#club">CLUB</a></li>
+                    <li><a href="#membership">MEMBERSHIP</a></li>
+                    <li><a href="#ivpteam">IVP TEAM</a></li>
+                    <li><a href="#facilities">FACILITIES</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#livecounter">LIVE COUNTER</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">EVENTS
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://boulderactive.nusclimb.com/">Boulderactive</a></li>
+                            <li><a href="https://www.facebook.com/ClimbNUS/?ref=br_rs">ClimbNUS</a></li>
+                           <li><a href="https://www.nussportsclub.org/clubs/climbing">E-SLF</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--marquee behavior="scroll" direction="left" body style="background-color:white;"><b>ClimbNUS 2020 will
+                        happen from 21st - 23rd January so what are you waiting for? Sign up now!</b></marquee-->
+            </div>
+        </div>
+    </nav>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="img/climbnus2019.png" width="1000" height="500">
+                <div class="carousel-caption">
+                    <h3>ClimbNUS 2019</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/outdoors.png" width="1000" height="500">
+                <div class="carousel-caption">
+                    <h3>EXPLORE THE OUTDOORS</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/carnival.png" width="1000" height="500">
+                <div class="carousel-caption">
+                    <h3>CHALLENGE YOURSELF</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/ba2019.png" width="1000" height="500">
+                <div class="carousel-caption">
+                    <h3>MEET THE LEGENDS</h3>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="img/club2018.png" width="1000" height="500">
+                <div class="carousel-caption">
+                    <h3>JOIN OUR FAMILY</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Container (Club Section) -->
+    <div id="club" class="container text-center">
+        <h3>NUS CLIMBING CLUB</h3>
+        <img class="img-center" src="img/climbnus_19.png" style="max-width:100%;" width="900" height="500">
+        <br></br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-fire logo-small"></span>
+                    <h2>WEEKLY SESSIONS</h2>
+                        <p>Join us for our recreational sessions every Tuesday and Friday! Our members range in experience, from absolute newbies to competition winners.</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-heart logo-small"></span>
+                    <h2>EXCITING EVENTS</h2>
+                        <p>We join forces with the IVP team as the organizers of the biggest bouldering competition in Singapore: NUS Boulderactive. Look out for us in 2021.</p>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-plane logo-small"></span>
+                    <h2>BONDING TRIPS</h2>
+                        <p>Don't miss out on our end of year trips to Malaysia and Krabi for some exciting outdoor climbing experience and enjoy your climbs at international gyms!</p>
+            </div>
+        </div>
+        <br>
+
+        <h2>TIMELINE</h2>
+        <div class="event_item" style="background-color: lightgrey">
+            <div class="ei_Title">Semester 1</div>
+        </div>
+        
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Week 1 - 5</div>
+            <div class="ei_Copy">Student Life Fair (SLF) & membership application process</div>
+        </div>
+        
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Recess Week</div>
+            <div class="ei_Copy">Combined Team & Club Cohesion</div>
+        </div>
+            
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Week 10</div>
+            <div class="ei_Copy">Internal club carnival</div>
+        </div>
+        
+        <div class="event_item" style="background-color: lightgrey">
+            <div class="ei_Title">Semester 2</div>
+        </div>
+        
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Week 1</div>
+            <div class="ei_Copy">Membership application for incoming exchange students</div>
+        </div>
+            
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Week 1 - 2</div>
+            <div class="ei_Copy">ClimbNUS (<a href="http://www.facebook.com/ClimbNUS">Facebook</a>)</div>
+        </div>
+            
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Week 10</div>
+            <div class="ei_Copy">Internal club carnival</div>
+        </div>
+            
+        <div class="event_item">
+            <div class="ei_Dot dot_active"></div>
+            <div class="ei_Title">Summer</div>
+            <div class="ei_Copy">NUS Boulderactive (<a href="http://boulderactive.nusclimb.com">Website</a>; <a href="http://www.facebook.com/NUS.Boulderactive">Facebook</a>)</div>
+        </div>
+    </div>
+        
+
+    <!-- Container (Membership Section) -->
+    <div id="membership" class="bg-1">
+      <div class="container">
+        <h3 class="text-center">MEMBERSHIP</h3>
+        <img class="img-center" src="img/cohesion.png" style="max-width:100%;" width="900" height="500">
+        <p></p>
+        <p style="text-align: center">
+            <em>
+                Slots will be opened in the upcoming <b>E - Student Life Fair AY20/21</b> with training dates and sign up form accessible
+                <a href='https://www.nussportsclub.org/clubs/climbing'>here</a> !
+            </em>
+        </p>
+        <!-- <p style="text-align: center">Kindly continue watching this space for more information.</p> -->
+        <p style="text-align: center">Participant spaces will be opened for <b>exchange students and graduate/post-graduate students</b>. Kindly
+            note that we will <u>no longer</u> be opening slots for staff.</p>
+        <br>
+      </div>
+    </div>
+
+    <!-- Container (IVP Team Section) -->
+    <div id="ivpteam" class="container text-center">
+            <h3 class="text-center"><i>team</i>NUS CLIMBING AY19/20</h3>
+            <img class="img-center" style="max-width:100%;" src="img/nusgirls.png" width="900" height="500">
+            <br><br>
+            <img class="img-center" style="max-width:100%;" src="img/nusguys.png" width="900" height="500">
+            <br></br>
+
+            <h2>NUS CLIMBING VARSITY TEAM</h2>
+            <p>As a TeamNUS Varsity Sport, the competitive team comprises of athletes that are driven to realise their maximum potential and translate their efforts into results. With our dedicated coach and a structured training programme, we aim to prepare our climbers for exciting year-round climbing competitions (about 5 annually). We are proud to carry the name of NUS Varsity Athletes as representatives of NUS.</p>
+            <br>
+    
+    <div class="testimonial-quote group">
+        <div class="quote-container">
+            <blockquote>
+                <p>Join us if you are a thrill-seeker. Join us if you want to push your physical and mental boundaries. Join us to do the unimaginable.”</p>
+            </blockquote>  
+        </div>
+    </div> 
+    <br></br>
+    <ul class="timeline">
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/belay.png" alt="" /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h2 class="subheading">TRAINING</h2>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Our family of climbers meet up thrice weekly (usually twice on weekday evenings, once on Saturday morning) for training which are held in external climbing gyms. Depending on our training phase, we train to be all rounded climbers with fantastic technique, amazing strength, great endurance and explosive power.</p></div>
+                        </div>
+        </li>
+        <li class="timeline-inverted">
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/boulderactive2017.jpg" alt="" /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h2 class="subheading">RECRUITMENT</h2>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Trials are usually held a week after Semester 1 begins. We welcome all students to our trials regardless of your level of experience. We look out for passionate individuals who are instinctive about their body movement on the wall. For those with prior competitive experience, your routes will be set depending on your competition category.</p></div>
+                    </div>
+        </li>
+        <li>
+            <div class="timeline-image"><img class="rounded-circle img-fluid" src="img/trip.png" alt="" /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h2 class="subheading">TRIP</h2>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">An annual year-end bonding trip is organised for team members to experience climbing outdoors and create an unforgettable experience. Subsidies are granted by the Sports and Recreation Office depending on the trip’s location and the results produced by the team that year. Over the last few years, our team has experienced bouldering outdoors in India, Thailand and the Philippines.</p></div>
+                    </div>
+        </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image">
+                    <h5>
+                                Be Part
+                                <br />
+                                Of Our
+                                <br />
+                                Story!
+                    </h5>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h2 class="subheading">CONTACT</h2>
+                    </div>
+                    <div class="timeline-body"><p class="text-muted">Slide into our DMs for more info! <br> <b><a href="https://www.instagram.com/teamnusmcmphm/?hl=en">@teamnusmcmphm</a> <a href="https://www.instagram.com/teamnusclimbingguys/?hl=en">@teamnusclimbingguys</a> <a href="https://www.instagram.com/teamnusclimbingirls/?hl=en">@teamnusclimbingirls</a></b></p></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+     <!-- Container (Facilities Section) -->
+    <div id="facilities" class="bg-1">
+      <div class="container">
+        <h3 class="text-center">FACILITIES</h3>
+        <p style="text-align:center"><em>All students and staff of NUS are welcome to use!</em></p>
+        <br>
+        <h2 class="text-center" style="color: white; letter-spacing: 2px;">Sport Climbing Wall at University Town</h2>
+        <br>
+        <img class="img-center" src="img/utown.png" style="width:100%;" width="800" height="500">
+        <br></br>
+    
+        <h2 class="text-center" style="color: white; letter-spacing: 2px;">Bouldering Wall at University Sports Centre</h2
+        <br>
+        <img class="img-center" src="img/boulder.png" style="width:100%;" width="800" height="500">
+        <p></p>
+    
+        <li style="text-align:center">Access available to NUS students, staff, and alumni</li>
+        <li style="text-align:center">Usage of the wall is regulated by Sports and Recreation Office</li>
+        <li style="text-align:center">Refer to university guidelines <a target="_blank"
+                href="http://nus.edu.sg/osa/images/src/articles/utwall.pdf"><b>here</b></a> (PDF), or email <a
+                href="mailto:sports@nus.edu.sg"><b>sports@nus.edu.sg</b></a> for more information.</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Container (FAQ Section) -->
+    <div id="faq" class="container text-center">
+        <h3>FREQUENTLY ASKED QUESTIONS</h3>
+        <p><em>Any queries? Check this out!</em></p>
+        <p></p>
+        <br>
+        <h2>QUESTIONS ABOUT CLIMBING</h2>
+        <button class="accordion">What is bouldering?</button>
+        <div class="panel">
+            <p style="text-align: left">Bouldering is a subset of climbing, somewhat akin to sprinting. It typically involves 4-10 powerful moves and does not go beyond 6 meters in height. As such, harnesses and ropes are not required and protection comes in the form of foam mattresses and pads to cushion your fall.</p>
+        </div>
+    
+        <button class="accordion">What is sport climbing?</button>
+        <div class="panel">
+            <p style="text-align: left">Sport climbing would look more familiar to the layman. It involves ropes, harnesses, carabiners and high walls. Ropes are fixed to anchors at the top of the route, or the climber will clip into bolts on the wall as they climb. Sport climbing calls for endurance, finesse, and trust in your belayer.</p>
+        </div>
+    
+        <button class="accordion">Is climbing a dangerous sport?</button>
+        <div class="panel">
+            <p style="text-align: left">Climbing is inherently dangerous and the risk of death or serious injury can never be completely eliminated. As such, we take precautions to prevent the worst from happening and safety is always on our minds as we climb. A ship is safe in harbour, but that's not what ships are for. Hence, it is up to each individual to make their own choices regarding acceptable risk.</p>
+        </div>
+    
+        <button class="accordion">I'm not strong/fit/young enough, can I still climb?</button>
+        <div class="panel">
+            <p style="text-align: left">Climbing demands mental fortitude and technique. Physical strength and fitness will help but they are not necessities to begin climbing. If you keep climbing, you'll find strength, fitness, and youth along the way ☺</p>
+        </div>
+    
+        <button class="accordion">How can I climb if I'm afraid of heights?</button>
+        <div class="panel">
+            <p style="text-align: left">Everyone is afraid of heights. For climbers, we just keep putting ourselves out there until we get used to it. Some of us just get busy with the climbing and forget about the heights, while others just try to manage and control their fear. Bouldering doesn't bring you too far away from the ground (3-5 metres), so you can start there and see if climbing is your cup of tea.</p>
+        </div>
+        </ol>
+        <br>
+        <br>
+        <h2>QUESTIONS ABOUT MEMBERSHIP</h2>
+        <button class="accordion">I don't know how to climb, can I join?</button>
+        <div class="panel">
+            <p style="text-align: left">Definitely! We'll teach you the skills if you're willing to put in the time and effort. Strength isn't a pre-requisite to start climbing - <i>passion</i> is.
+            </p>
+        </div>
+    
+        <button class="accordion">I know how to climb, can I join?</button>
+        <div class="panel">
+            <p style="text-align: left">Of course! We have a good mix of new and experienced climbers in the club. However, <u>we expect our more experienced members to guide the newer climbers</u>. It’s a climbing club after all, so it is expected that we should get stronger together. If it's a training ground you seek, then I'm afraid you should look elsewhere instead.</p>
+        </div>
+    
+        <button class="accordion">How many members do you have?</button>
+        <div class="panel">
+            <p style="text-align: left">At the moment, we have about slightly less than 100 undergraduates, graduates and post-graduates, staff and faculty members climbing with us.</p>
+        </div>
+    
+        <button class="accordion">Why do you limit the amount of memberships?</button>
+        <div class="panel">
+            <p style="text-align: left">Our club grows expontentially year after year. As big as our current facilities at UTown and SIM are, these facilities can only accommodate so many people without compromising the safety of our climbers. Hence, the club will only take in as many new members as we can safely support whilst also ensure that our members enjoy greater access to these facilities.</p>
+        </div>
+    
+        <button class="accordion">I'm an exchange student, can I join?</button>
+        <div class="panel">
+            <p style="text-align: left">We have reserved a number of memberships for exchange students. When our current exchange students leave us after a semester, we'll open those spaces at the start of each semester for new exchange students to join.</p>
+        </div>
+    
+        <button class="accordion">Do I need to buy my own climbing equipment?</button>
+        <div class="panel">
+            <p style="text-align: left">We expect our members to, at the very least, own a pair of climbing shoes and chalk bag. Beyond hygiene concerns, these are essential equipment that will make a big difference to your climbing. If you're just starting out, you can loan a pair of old shoes from the club. Other equipment such as harness and ropes will be provided by the club during our climbing sessions.</p>
+        </div>
+    
+        <button class="accordion">Do I need climbing safety and belaying certifications?</button>
+        <div class="panel">
+            <p style="text-align: left">Club members are required to have SNCS Level 1 certification. While exchange students may be certified in their home countries, the institution does not allow these students to belay other climbers as there may be differences in climbing standards. For those who are not certified, the club conducts <a href="courses.php">courses</a> for our members at discounted rates, so you can join us first and get your certification later.</p>
+        </div>
+        </ol>
+        <br>
+        <br>
+        <h2>QUESTIONS ABOUT RECREATIONAL CLUB</h2>
+        <button class="accordion">Why is there a minimum attendance requirement?</button>
+        <div class="panel">
+            <p style="text-align: left">We had more than 400 people applying for membership spots last yea, and have unfortunately turned away a lot of people. As such, we want to ensure that we are taking in members who deserves their membership by being actively involved in the club.</p>
+        </div>
+    
+        <button class="accordion">Why are attendance requirements not strictly enforced for exchange
+            students, or NUS postgraduates and staff?</button>
+        <div class="panel">
+            <p style="text-align: left">We understand that exchange students want to travel and may not be always around. As long as you’re not a phantom member, we're okay with that. For graduates, postgraduates, and staff, if you can fit climbing around your busy schedules, we'll be happy to have you!</p>
+        </div>
+    
+        <button class="accordion">What is Climbing Cohesion about?</button>
+        <div class="panel">
+            <p style="text-align: left">Climbing Cohesion happens every Recess Week of Semester 1. It is one of the few opportunities for the Climbing Club and Varsity Team to come together and meet everyone. During the cohesion, we'll eat, sleep, play camp games, climb, and repeat!</p>
+        </div>
+    
+        <button class="accordion">What is Climbing Carnival about?</button>
+        <div class="panel">
+            <p style="text-align: left">The Climbing Carnival is an internal club event for our members. Climbers from the competitive team and our more experienced members will set 20-30 problems on our bouldering wall for everyone to try. You'll get some points when you finish each problems and at the end of the day, the top scorers get a small prize - and of course, bragging rights!</p>
+        </div>
+    
+        <button class="accordion">Can I bring my friends to climb during climbing sessions?</button>
+        <div class="panel">
+            <p style="text-align: left">Access is restricted to members of climbing club and varsity team ONLY.</p>
+        </div>
+        </ol>
+        <br>
+        <br>
+        <h2>QUESTIONS ABOUT VARSITY TEAM</h2>
+    
+        <button class="accordion">What is the Varsity Team? How is it different from the club?</button>
+        <div class="panel">
+            <p style="text-align: left">We are a group of climbers who not only loves climbing but also enjoys competing on a regular basis. There are several differences between the recreational club and the team.<br><br> Firstly, we train with more frequency, structure and intensity. Attendance is compulsory THREE times a week. Training programmes are set each session which are tailored for individual climbers to enable you to work on you weaknesses and boost your strengths so that you can realise your best potential. If you are looking to climbing as a recreational hobby, the club is more suited to your needs.<br><br> Secondly, we represent TeamNUS at national and invitational competitions. These competitions are compulsory and subsidised by the school. As a result, we expect our athletes to be on top form for the competitions and to do their very best and leave without regrets.<br><br> Thirdly, we keep our numbers small and this confers certain benefits. The climbing gym is never overpopulated on team training days (on club climbing days, it tends to get slightly crowded!). We are a close-knit family that trains, eats and competes together. The sense of comraderie and belonging is strong.</p>
+        </div>
+    
+        <button class="accordion">I don’t have experience, can I join?</button>
+        <div class="panel">
+            <p style="text-align: left">Yes! We have accepted and will continue to accept people with no or little prior experience. We believe that climbing is a sport that one can pick up even when you’re in university and still excel in it within your undergraduate days (we have living breathing proof of such people). However, all parties interested in joining the varsity team have to be selected based on your results at the trial.</p>
+        </div>
+    
+        <button class="accordion">How can I get through the trials without experience?</button>
+        <div class="panel">
+            <p style="text-align: left">Trials consist of pre-set routes (known as problems) which are marked with tape. You will be asked to climb them and we will guide you along. These problems are set with the understanding that you are a complete stranger to climbing. We look out for your movement on the wall and if you are instinctive about body positioning and stability as well as your physical form.</p>
+        </div>
+    
+        <button class="accordion">I have experience, do I still have to come for trials?</button>
+        <div class="panel">
+            <p style="text-align: left">Yes you will have to attend trials. All successful candidates will be notified. Allez!</p>
+        </div>
+    
+        <button class="accordion">How many people are selected to join the team?</button>
+        <div class="panel">
+            <p style="text-align: left">This depends on our current team size. If more senior climbers graduate or leave the team, we have the liberty of accepting more climbers. This number is, however, arbitrary. Should we find more talent than our specified quota, we will gladly take them all.</p>
+        </div>
+    
+        <button class="accordion">Can I join the team but not compete?</button>
+        <div class="panel">
+            <p style="text-align: left">No. You are a competitive athlete, it is understood that you will represent TeamNUS in competition unless you have a legitimate reason (eg. sick, injured, overseas).</p>
+        </div>
+    
+        <button class="accordion">What is the level of commitment like?</button>
+        <div class="panel">
+            <p style="text-align: left">Climbers in the varsity team are expected to come for all scheduled trainings (thrice weekly) as well as internal competitions, national/invitational competitions and team meetings. This is relatively demanding considering that undergraduates have deadlines, projects and examinations.</p>
+        </div>
+    
+        <button class="accordion">Does the team focus entirely on bouldering?</button>
+        <div class="panel">
+            <p style="text-align: left">No. Although majority of trainings revolve around bouldering (due to the frequency of bouldering competitions and the facilities that can accommodate the team), we do prepare and compete in lead climbing competitions as well.</p>
+        </div>
+        </ol>
+        <br>
+        <br>
+    
+        <h2>QUESTIONS ABOUT COURSES</h2>
+        <button class="accordion">How do I go about applying for Level 1 and Level 2 certification?</button>
+        <div class="panel">
+            <p style="text-align: left">For more information about our upcoming courses, please refer to the <a href='https://drive.google.com/file/d/1Fg9C87cG1qSfXH5DunL4w0voHQdQs1Qe/view?usp=sharing' target='_blank'>attached document</a>.</p>
+        </div>
+    </div>
+
+
+    <!-- Container (Live Counter Section) -->
+    <div id="livecounter" class="bg-1">
+        <div class="container">
+            <h3 class="text-center">LIVE COUNTER</h3>
+            <h3 id="counter" style="text-align: center"></h3>
+            <p style="text-align: center">In line with Sports Club's regulations during the Covid-19 pandemic, members of NUS Climbing Club have priority over the slots available at our training facilities, during official training sessions on Tuesday and Friday.</p>
+            <p>Please be reminded to check-in before your session begins, and check-out when your session ends for administrative purposes.</p>
+            <br></br>
+            <p style="text-align: center"><b>Check-In:</b> link will be made available when session commence</p>
+            <p style="text-align: center"><b>Check-Out:</b> link will be made available when session commence</p>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container">
+        <h3 class="text-center">CONTACT US</h3>
+        <p class="text-center"><em>Feel free to drop us an
+                email!</em></p>
+        <p class="text-center"><b>National University of
+                Singapore</b><br><b>Climbing
+                Club</b><br>Marcus Tan (Mr),
+            Secretary<br>ATTN: Climbing Club<br>NUS
+            Students' Sports Club<br>Sports and Recreation
+            Centre<br>2 Sports Drive 1<br>Singapore
+            117561<br><span class="glyphicon glyphicon-envelope"></span>nusclimb@gmail.com</p>
+        <a href='mailto:nusclimb@gmail.com?'><button class="btn center-block" type="submit">Click
+                Here</button></a>
+    </div>
+    <br>
+    <script>
+        $(document).ready(function () {
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+        })
+
+        var spreadsheetUrl = 'https://spreadsheets.google.com/feeds/cells/1NeNwu5ygLL3pWE8NZGmtKzRJiVP3h5OgFk0LC7ItK_M/1/public/values?alt=json-in-script&callback=doData';
+
+
+        // The callback function the JSONP request will execute to load data from API
+        function doData(data) {
+            // Final results will be stored here	
+            var results = [];
+
+            // Get all entries from spreadsheet
+            var entries = data.feed.entry;
+
+            // Set initial previous row, so we can check if the data in the current cell is from a new row
+            var previousRow = 0;
+
+            // Iterate all entries in the spreadsheet
+            for (var i = 0; i < entries.length; i++) {
+                // check what was the latest row we added to our result array, then load it to local variable
+                var latestRow = results[results.length - 1];
+
+                // get current cell
+                var cell = entries[i];
+
+                // get text from current cell
+                var text = cell.content.$t;
+
+                // get the current row
+                var row = cell.gs$cell.row;
+
+                // Determine if the current cell is in the latestRow or is a new row
+                if (row > previousRow) {
+                    // this is a new row, create new array for this row
+                    var newRow = [];
+
+                    // add the cell text to this new row array  
+                    newRow.push(text);
+
+                    // store the new row array in the final results array
+                    results.push(newRow);
+
+                    // Increment the previous row, since we added a new row to the final results array
+                    previousRow++;
+                } else {
+                    // This cell is in an existing row we already added to the results array, add text to this existing row
+                    latestRow.push(text);
+                }
+
+            }
+
+            document.getElementById("counter").innerHTML = handleResults(results);
+        }
+
+        // Do what ever you please with the final array
+        function handleResults(spreadsheetArray) {
+            console.log(spreadsheetArray.toString());
+            
+            let checkinCount = 0;
+            for (var i = 1; i < spreadsheetArray.length; i++) {
+                if (spreadsheetArray[i][4] === "Check In") {
+                    checkinCount += 1;
+                }
+            }
+            
+            let checkoutCount = 0;
+            for (var i = 1; i < spreadsheetArray.length; i++) {
+                if (spreadsheetArray[i][4] === "Check Out") {
+                    checkoutCount += 1;
+                }
+            }
+            
+            return checkinCount - checkoutCount; 
+        }
+
+
+
+        // Create JSONP Request to Google Docs API, then execute the callback function doData
+        $.ajax({
+            url: spreadsheetUrl,
+            jsonp: 'doData',
+            dataType: 'jsonp'
+        });
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+    </script>
+    
+    </body>
+    
+    </html>
